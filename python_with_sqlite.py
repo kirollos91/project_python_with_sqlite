@@ -2,6 +2,8 @@
 import sqlite3
 # الاتصال بقاعدة البيانات
 db = sqlite3.connect("app.db")
+# انشاء جدول المهارات اذا لم يكن موجود
+db.execute("create table if not exists skills (name text, progress integer,user_id integer)")
 # استخدام دالة المؤشر 
 cr = db.cursor()
 # رقم المستخدم الافتراضى
